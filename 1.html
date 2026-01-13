@@ -23,7 +23,9 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="config.js"></script>
-  <style>
+ <!-- في قسم head، بعد الروابط وأقبل الـstyle -->
+<script src="dami-config.js"></script>
+    <style>
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1e293b; }
@@ -1628,6 +1630,710 @@
             initApp();
         }
     </script>
-  <script src="config.js"></script>
+
+<!-- في قسم head، بعد الروابط وأقبل الـstyle -->
+<script src="dami-config.js"></script>    
+<script>
+        // ==================== نظام الترجمة ==================== 
+        const i18n = {
+            ar: {
+                home: "الرئيسية",
+                live: "مباشر",
+                movies: "أفلام",
+                series: "مسلسلات",
+                search_placeholder: "ابحث عن القناة أو الفيلم...",
+                loading: "جاري التحميل...",
+                load_more: "عرض المزيد",
+                download_title: "حمل تطبيق DAMI X-PRO",
+                download_desc: "استمتع بأفضل القنوات والأفلام بجودة عالية وبدون تقطيع على هاتفك.",
+                download_now: "تحميل الآن",
+                download_app: "تحميل التطبيق",
+                about_us: "من نحن",
+                contact_us: "اتصل بنا",
+                privacy_policy: "سياسة الخصوصية",
+                terms_use: "شروط الاستخدام",
+                footer_rights: "جميع الحقوق محفوظة للمطور عماد الدين لمراني",
+                all_categories: "الكل",
+                no_results: "لا توجد نتائج",
+                error_loading: "حدث خطأ في التحميل",
+                modal_about: "DAMI X-PRO هي منصة رائدة في مجال البث الرقمي توفر محتوى ترفيهي عالي الجودة للمشاهدين في جميع أنحاء العالم.",
+                modal_contact: "يمكنك التواصل معنا عبر الواتساب: +212783539816 أو عبر البريد الإلكتروني.",
+                modal_privacy: "نحن نحترم خصوصيتك. لا يتم مشاركة بياناتك مع أي طرف ثالث. جميع المعلومات محمية ومشفرة.",
+                modal_terms: "باستخدامك للموقع، فإنك توافق على عدم إعادة بث المحتوى أو استخدامه بشكل غير قانوني. يجب احترام حقوق الملكية الفكرية."
+            },
+            en: {
+                home: "Home",
+                live: "Live TV",
+                movies: "Movies",
+                series: "Series",
+                search_placeholder: "Search channels or movies...",
+                loading: "Loading...",
+                load_more: "Load More",
+                download_title: "Download DAMI X-PRO App",
+                download_desc: "Enjoy the best channels and movies in high quality without interruption.",
+                download_now: "Download Now",
+                download_app: "Download App",
+                about_us: "About Us",
+                contact_us: "Contact Us",
+                privacy_policy: "Privacy Policy",
+                terms_use: "Terms of Use",
+                footer_rights: "All rights reserved to developer Imad Eddine Lamrani",
+                all_categories: "All",
+                no_results: "No results found",
+                error_loading: "Error loading content",
+                modal_about: "DAMI X-PRO is a leading streaming platform providing high-quality entertainment content.",
+                modal_contact: "Contact us via WhatsApp: +212783539816",
+                modal_privacy: "We respect your privacy. Data is not shared with third parties.",
+                modal_terms: "By using this site, you agree not to re-stream content illegally."
+            },
+            fr: {
+                home: "Accueil",
+                live: "Direct",
+                movies: "Films",
+                series: "Séries",
+                search_placeholder: "Rechercher...",
+                loading: "Chargement...",
+                load_more: "Voir plus",
+                download_title: "Télécharger DAMI X-PRO",
+                download_desc: "Profitez des meilleures chaînes et films en haute qualité.",
+                download_now: "Télécharger",
+                download_app: "Télécharger l'App",
+                about_us: "À propos",
+                contact_us: "Contactez-nous",
+                privacy_policy: "Confidentialité",
+                terms_use: "Conditions",
+                footer_rights: "Tous droits réservés à Imad Eddine Lamrani",
+                all_categories: "Tous",
+                no_results: "Aucun résultat",
+                error_loading: "Erreur de chargement",
+                modal_about: "DAMI X-PRO est une plateforme de streaming offrant un contenu de haute qualité.",
+                modal_contact: "Contactez-nous via WhatsApp : +212783539816",
+                modal_privacy: "Nous respectons votre vie privée.",
+                modal_terms: "Vous acceptez de ne pas rediffuser le contenu illégalement."
+            },
+            es: {
+                home: "Inicio",
+                live: "En vivo",
+                movies: "Películas",
+                series: "Series",
+                search_placeholder: "Buscar...",
+                loading: "Cargando...",
+                load_more: "Ver más",
+                download_title: "Descargar DAMI X-PRO",
+                download_desc: "Disfruta de los mejores canales y películas في alta calidad.",
+                download_now: "Descargar",
+                download_app: "Descargar App",
+                about_us: "Nosotros",
+                contact_us: "Contacto",
+                privacy_policy: "Privacidad",
+                terms_use: "Condiciones",
+                footer_rights: "Todos los derechos reservados a Imad Eddine Lamrani",
+                all_categories: "Todos",
+                no_results: "Sin resultados",
+                error_loading: "Error al cargar",
+                modal_about: "DAMI X-PRO es una plataforma de transmisión de alta calidad.",
+                modal_contact: "Contáctenos vía WhatsApp: +212783539816",
+                modal_privacy: "Respetamos su privacidad.",
+                modal_terms: "Acepta no retransmitir contenido ilegalmente."
+            }
+        };
+
+        // ==================== متغيرات عامة ==================== 
+        let currentLang = 'ar';
+        let currentMode = 'live';
+        let currentCategory = 'all';
+        let fullData = [];
+        let displayedCount = 0;
+        let searchTimeout = null;
+        let player = null;
+        let hls = null;
+
+        // ==================== نظام الكاش المحسّن ==================== 
+        class CacheManager {
+            constructor() {
+                this.storage = new Map();
+                this.timestamps = new Map();
+            }
+
+            set(key, value) {
+                this.storage.set(key, value);
+                this.timestamps.set(key, Date.now());
+            }
+
+            get(key) {
+                if (!this.storage.has(key)) return null;
+                
+                const timestamp = this.timestamps.get(key);
+                const age = Date.now() - timestamp;
+                
+                if (age > CONFIG.CACHE.DURATION) {
+                    this.storage.delete(key);
+                    this.timestamps.delete(key);
+                    return null;
+                }
+                
+                return this.storage.get(key);
+            }
+
+            clear() {
+                this.storage.clear();
+                this.timestamps.clear();
+            }
+        }
+
+        const cache = new CacheManager();
+
+        // ==================== Helper Functions ==================== 
+        const $ = (selector) => document.querySelector(selector);
+        const $$ = (selector) => document.querySelectorAll(selector);
+
+        function showLoading(container, message = i18n[currentLang].loading) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="loading-spinner"></div>
+                    <p style="margin-top: 15px;">${message}</p>
+                </div>
+            `;
+        }
+
+        function showError(container, message = i18n[currentLang].error_loading) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>${message}</h3>
+                </div>
+            `;
+        }
+
+        function showEmpty(container) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <h3>${i18n[currentLang].no_results}</h3>
+                </div>
+            `;
+        }
+
+        // ==================== API Functions ==================== 
+        async function fetchAPI(action, params = {}) {
+            const cacheKey = `${action}_${JSON.stringify(params)}`;
+            
+            // التحقق من الكاش أولاً
+            if (CONFIG.CACHE.ENABLED) {
+                const cached = cache.get(cacheKey);
+                if (cached) return cached;
+            }
+
+            const url = configManager.getApiUrl(action, params);
+            
+            try {
+                const finalUrl = CONFIG.SECURITY.ENABLE_PROXY ? 
+                    configManager.getProxyUrl(url) : url;
+                    
+                const response = await fetch(finalUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const data = await response.json();
+                
+                // حفظ في الكاش
+                if (CONFIG.CACHE.ENABLED) {
+                    cache.set(cacheKey, data);
+                }
+                
+                return data;
+            } catch (error) {
+                console.error('Fetch error:', error);
+                throw error;
+            }
+        }
+
+        // ==================== Categories Functions ==================== 
+        async function loadCategories() {
+            const container = $('#categoriesContainer');
+            showLoading(container);
+
+            const modeConfig = {
+                live: { action: 'get_live_categories', streamAction: 'get_live_streams' },
+                movies: { action: 'get_vod_categories', streamAction: 'get_vod_streams' },
+                series: { action: 'get_series_categories', streamAction: 'get_series' }
+            };
+
+            const config = modeConfig[currentMode];
+
+            try {
+                const categories = await fetchAPI(config.action);
+                
+                let html = `
+                    <button class="cat-btn active" data-category="all">
+                        ${i18n[currentLang].all_categories}
+                    </button>
+                `;
+
+                categories.forEach(cat => {
+                    html += `
+                        <button class="cat-btn" data-category="${cat.category_id}">
+                            ${cat.category_name}
+                        </button>
+                    `;
+                });
+
+                container.innerHTML = html;
+
+                // إضافة Event Listeners
+                $$('.cat-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        $$('.cat-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        currentCategory = e.target.dataset.category;
+                        loadContent();
+                    });
+                });
+
+                // تحميل المحتوى
+                currentCategory = CONFIG.DISPLAY.DEFAULT_CATEGORY;
+                loadContent();
+
+            } catch (error) {
+                showError(container);
+            }
+        }
+
+        // ==================== Content Functions ==================== 
+        async function loadContent() {
+            const grid = $('#contentGrid');
+            showLoading(grid);
+
+            const modeConfig = {
+                live: 'get_live_streams',
+                movies: 'get_vod_streams',
+                series: 'get_series'
+            };
+
+            const action = modeConfig[currentMode];
+            const params = currentCategory !== 'all' ? { category_id: currentCategory } : {};
+
+            try {
+                const data = await fetchAPI(action, params);
+                fullData = Array.isArray(data) ? data : [];
+                displayedCount = 0;
+                renderContent();
+            } catch (error) {
+                showError(grid);
+            }
+        }
+
+        function renderContent(append = false) {
+            const grid = $('#contentGrid');
+            const loadMoreSection = $('#loadMoreSection');
+            
+            if (!append) {
+                grid.innerHTML = '';
+                displayedCount = 0;
+            }
+
+            const start = displayedCount;
+            const end = Math.min(start + CONFIG.DISPLAY.ITEMS_PER_PAGE, fullData.length);
+            const items = fullData.slice(start, end);
+
+            if (items.length === 0 && !append) {
+                showEmpty(grid);
+                loadMoreSection.style.display = 'none';
+                return;
+            }
+
+            items.forEach(item => {
+                const card = createMediaCard(item);
+                grid.appendChild(card);
+            });
+
+            displayedCount = end;
+
+            // إظهار/إخفاء زر المزيد
+            loadMoreSection.style.display = displayedCount < fullData.length ? 'block' : 'none';
+        }
+
+        function createMediaCard(item) {
+            const div = document.createElement('div');
+            div.className = 'media-card';
+            
+            const streamId = item.stream_id || item.series_id || item.vod_id;
+            const extension = item.container_extension || 'm3u8';
+            const icon = item.stream_icon || item.cover || 'https://via.placeholder.com/150';
+            const name = item.name || 'Unknown';
+
+            div.innerHTML = `
+                <img 
+                    src="${icon}" 
+                    class="media-logo" 
+                    loading="lazy"
+                    onerror="this.src='https://via.placeholder.com/150?text=No+Image'"
+                    alt="${name}"
+                >
+                <p class="media-title">${name}</p>
+            `;
+
+            div.addEventListener('click', () => playStream(streamId, extension));
+
+            return div;
+        }
+
+        // ==================== Player Functions ==================== 
+        function initPlayer() {
+            player = new Plyr('#player', {
+                controls: [
+                    'play-large',
+                    'play',
+                    'progress',
+                    'current-time',
+                    'mute',
+                    'volume',
+                    'settings',
+                    'fullscreen'
+                ],
+                settings: ['quality', 'speed'],
+                quality: {
+                    default: CONFIG.PLAYER.DEFAULT_QUALITY,
+                    options: CONFIG.PLAYER.QUALITIES
+                },
+                speed: {
+                    selected: CONFIG.PLAYER.DEFAULT_SPEED,
+                    options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+                }
+            });
+        }
+
+        function playStream(id, ext) {
+            const typeMap = {
+                live: 'live',
+                movies: 'movie',
+                series: 'series'
+            };
+
+            const type = typeMap[currentMode];
+            const format = currentMode === 'live' ? 'm3u8' : (ext || 'mp4');
+            const streamUrl = configManager.getStreamUrl(type, id, format);
+
+            const video = $('#player');
+
+            // إيقاف المشغل السابق
+            if (hls) {
+                hls.destroy();
+                hls = null;
+            }
+
+            video.pause();
+
+            if (format === 'm3u8') {
+                if (Hls.isSupported()) {
+                    hls = new Hls({
+                        enableWorker: true,
+                        lowLatencyMode: true,
+                        backBufferLength: 90
+                    });
+                    
+                    hls.loadSource(streamUrl);
+                    hls.attachMedia(video);
+                    
+                    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                        if (CONFIG.PLAYER.AUTO_PLAY) {
+                            video.play().catch(e => console.log('Autoplay prevented:', e));
+                        }
+                    });
+
+                    hls.on(Hls.Events.ERROR, (event, data) => {
+                        if (data.fatal) {
+                            console.error('HLS error:', data);
+                            switch(data.type) {
+                                case Hls.ErrorTypes.NETWORK_ERROR:
+                                    hls.startLoad();
+                                    break;
+                                case Hls.ErrorTypes.MEDIA_ERROR:
+                                    hls.recoverMediaError();
+                                    break;
+                                default:
+                                    hls.destroy();
+                                    break;
+                            }
+                        }
+                    });
+
+                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    // Safari native HLS support
+                    video.src = streamUrl;
+                    if (CONFIG.PLAYER.AUTO_PLAY) {
+                        video.play().catch(e => console.log('Autoplay prevented:', e));
+                    }
+                } else {
+                    alert('Your browser does not support HLS streaming. Please use Chrome, Firefox, or Safari.');
+                }
+            } else {
+                video.src = streamUrl;
+                if (CONFIG.PLAYER.AUTO_PLAY) {
+                    video.play().catch(e => console.log('Autoplay prevented:', e));
+                }
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==================== Search Function ==================== 
+        function handleSearch(query) {
+            const grid = $('#contentGrid');
+            const loadMoreSection = $('#loadMoreSection');
+            
+            if (!query.trim() || query.length < CONFIG.SEARCH.MIN_CHARS) {
+                renderContent();
+                return;
+            }
+
+            const filtered = fullData.filter(item => 
+                item.name && item.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (filtered.length === 0) {
+                showEmpty(grid);
+                loadMoreSection.style.display = 'none';
+                return;
+            }
+
+            grid.innerHTML = '';
+            const limit = Math.min(filtered.length, CONFIG.DISPLAY.SEARCH_LIMIT);
+            
+            filtered.slice(0, limit).forEach(item => {
+                const card = createMediaCard(item);
+                grid.appendChild(card);
+            });
+
+            loadMoreSection.style.display = 'none';
+        }
+
+        // ==================== Language Function ==================== 
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            // تحديث جميع النصوص
+            $$('[data-translate]').forEach(el => {
+                const key = el.dataset.translate;
+                if (i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
+                }
+            });
+
+            $$('[data-translate-placeholder]').forEach(el => {
+                const key = el.dataset.translatePlaceholder;
+                if (i18n[lang][key]) {
+                    el.placeholder = i18n[lang][key];
+                }
+            });
+
+            // إعادة تحميل الفئات بعد تغيير اللغة
+            loadCategories();
+        }
+
+        // ==================== Theme Function ==================== 
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const icon = $('#themeIcon');
+            const isLight = document.body.classList.contains('light-mode');
+            
+            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            
+            // حفظ التفضيل
+            configManager.updateUserSetting('UI', 'THEME', isLight ? 'light' : 'dark');
+        }
+
+        // ==================== Security Check ==================== 
+        function checkBrowserSecurity() {
+            if (CONFIG.SECURITY.BLOCK_CHROME) {
+                const isChrome = /Chrome/.test(navigator.userAgent) && 
+                               /Google Inc/.test(navigator.vendor) && 
+                               !/Edg/.test(navigator.userAgent);
+                
+                const isAllowed = CONFIG.SECURITY.ALLOWED_BROWSERS.some(browser => 
+                    navigator.userAgent.toLowerCase().includes(browser)
+                );
+                
+                if (isChrome && !isAllowed) {
+                    document.body.innerHTML = `
+                        <div style="height:100vh; display:flex; align-items:center; justify-content:center; background:#000; color:${CONFIG.UI.THEME_COLOR}; text-align:center; padding:20px;">
+                            <div>
+                                <h1>⚠️ ${CONFIG.SYSTEM.APP_NAME}</h1>
+                                <p>هذا المتصفح غير مدعوم. يرجى استخدام:</p>
+                                <p>${CONFIG.SECURITY.ALLOWED_BROWSERS.map(b => b.charAt(0).toUpperCase() + b.slice(1)).join(', ')}</p>
+                            </div>
+                        </div>
+                    `;
+                    throw new Error('Browser not supported');
+                }
+            }
+        }
+
+        // ==================== Modal Functions ==================== 
+        function showModal(type) {
+            const modal = $('#infoModal');
+            const title = $('#modalTitle');
+            const body = $('#modalBody');
+
+            const titleKey = {
+                about: 'about_us',
+                contact: 'contact_us',
+                privacy: 'privacy_policy',
+                terms: 'terms_use'
+            }[type];
+
+            title.textContent = i18n[currentLang][titleKey];
+            body.textContent = i18n[currentLang][`modal_${type}`];
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            $('#infoModal').style.display = 'none';
+        }
+
+        // ==================== Sidebar Functions ==================== 
+        function toggleSidebar(show = null) {
+            const sidebar = $('#sidebar');
+            const overlay = $('#sidebarOverlay');
+            
+            if (show === null) {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('open');
+            } else {
+                sidebar.classList.toggle('open', show);
+                overlay.classList.toggle('open', show);
+            }
+        }
+
+        // ==================== Event Listeners ==================== 
+        function initEventListeners() {
+            // Menu Toggle
+            $('#menuToggle').addEventListener('click', () => toggleSidebar());
+            $('#sidebarClose').addEventListener('click', () => toggleSidebar(false));
+            $('#sidebarOverlay').addEventListener('click', () => toggleSidebar(false));
+
+            // Sidebar Links
+            $$('.sidebar-link[data-action]').forEach(link => {
+                link.addEventListener('click', () => {
+                    const action = link.dataset.action;
+                    if (action === 'home') {
+                        toggleSidebar(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        toggleSidebar(false);
+                        showModal(action);
+                    }
+                });
+            });
+
+            // Theme Toggle
+            $('#themeToggle').addEventListener('click', toggleTheme);
+
+            // Language Select
+            $('#langSelect').addEventListener('change', (e) => {
+                changeLanguage(e.target.value);
+                localStorage.setItem('language', e.target.value);
+            });
+
+            // Mode Tabs
+            $$('.mode-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    $$('.mode-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentMode = btn.dataset.mode;
+                    loadCategories();
+                });
+            });
+
+            // Search Input
+            $('#searchInput').addEventListener('input', (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    handleSearch(e.target.value);
+                }, CONFIG.SEARCH.DEBOUNCE_TIME);
+            });
+
+            // Load More Button
+            $('#loadMoreBtn').addEventListener('click', () => {
+                renderContent(true);
+            });
+
+            // Modal Close
+            $('#modalClose').addEventListener('click', closeModal);
+            $('#infoModal').addEventListener('click', (e) => {
+                if (e.target.id === 'infoModal') closeModal();
+            });
+
+            // Back to Top
+            $('#backToTop').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Scroll Event for Back to Top Button
+            window.addEventListener('scroll', () => {
+                if (!CONFIG.UI.SHOW_FLOATING_BUTTONS) return;
+                
+                const btn = $('#backToTop');
+                if (window.scrollY > 400) {
+                    btn.classList.add('show');
+                } else {
+                    btn.classList.remove('show');
+                }
+            });
+        }
+
+        // ==================== Initialize App ==================== 
+        function initApp() {
+            // فحص الأمان
+            checkBrowserSecurity();
+            
+            // تهيئة المشغل
+            initPlayer();
+
+            // تهيئة Event Listeners
+            initEventListeners();
+
+            // تحميل Theme المحفوظ
+            const savedTheme = configManager.userSettings.UI?.THEME || 'dark';
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                $('#themeIcon').className = 'fas fa-sun';
+            }
+
+            // تحميل اللغة المحفوظة
+            const savedLang = localStorage.getItem('language') || CONFIG.UI.DEFAULT_LANG;
+            $('#langSelect').value = savedLang;
+            changeLanguage(savedLang);
+
+            // إخفاء/إظهار الأقسام بناءً على الإعدادات
+            if (!CONFIG.UI.SHOW_DOWNLOAD_SECTION) {
+                $('.app-download-section').style.display = 'none';
+            }
+            
+            if (!CONFIG.UI.SHOW_FLOATING_BUTTONS) {
+                $$('.floating-btn').forEach(btn => btn.style.display = 'none');
+            }
+
+            // تحديث السنة في الفوتر
+            $('#year').textContent = new Date().getFullYear();
+
+            // تحديث رقم الواتساب
+            if (CONFIG.SYSTEM.SUPPORT_WHATSAPP) {
+                $('.whatsapp-btn').href = `https://wa.me/${CONFIG.SYSTEM.SUPPORT_WHATSAPP.replace('+', '')}`;
+            }
+
+            // تحميل المحتوى الأولي
+            loadCategories();
+        }
+
+        // ==================== Start App ==================== 
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
+    </script>
 </body>
 </html>
