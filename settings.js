@@ -3,7 +3,7 @@ class SettingsManager {
     constructor() {
         this.defaultConfig = {
             server: {
-                base: "http://ottpro.iptvpro2.com:8789",
+                base: "https://ottpro.iptvpro2.com:8789",
                 user: "Oujakr12",
                 pass: "87593226"
             },
